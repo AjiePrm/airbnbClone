@@ -1,5 +1,5 @@
 <template>
-    <div class="container flex place-content-between gap-4 mt-[15.61px]">
+    <div class="w-full flex place-content-between gap-4 mt-[15.61px]">
         <div class="flex">
             <div class="w-[28.65] h-[30.78] px-[25.65px]">
                 <img class="w-[28.65px] h-[30.78px]" src="~/assets/image/icon.svg" alt="">
