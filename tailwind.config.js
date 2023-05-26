@@ -17,7 +17,14 @@ module.exports = {
       secondaryGray: "#767676",
       secondaryWhite: "#FFFFFF",
     },
-    extend: {},
+    extend: {
+      backgroundImage:{
+        'image-hero': "url('~/assets/image/bghero.svg')"
+      },
+      fontFamily: {
+        fontRoboto: ["Roboto", "sans-serif"],
+       },
+    },
   },
   plugins: [],
 };

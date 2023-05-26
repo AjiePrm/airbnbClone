@@ -5,7 +5,5 @@
 </template>
 
 <script setup>
-definePageMeta({
-    path: '/'
-})
+
 </script>
