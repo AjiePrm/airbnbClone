@@ -5,6 +5,9 @@
         <CardForm></CardForm>
     </div>
     <div class="container w-[1366px] m-auto">
+        <AirbnbPlus></AirbnbPlus>
+    </div>
+    <div class="container w-[1366px] m-auto">
         <Category></Category>
     </div>
     <div class="container w-[1366px] m-auto">
