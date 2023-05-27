@@ -4,7 +4,10 @@
         <Header></Header>
         <CardForm></CardForm>
     </div>
-    <div class="w-[1366px] m-auto">
+    <div class="container w-[1366px] m-auto">
+        <Category></Category>
+    </div>
+    <div class="container w-[1366px] m-auto">
         <CardItem></CardItem>
     </div>
 </template>
