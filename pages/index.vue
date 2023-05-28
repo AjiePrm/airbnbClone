@@ -4,6 +4,24 @@
         <Header></Header>
         <CardForm></CardForm>
     </div>
+    <div class="container w-[1366px] m-auto">
+        <Category></Category>
+    </div>
+    <div class="container w-[1366px] m-auto">
+        <AirbnbPlus></AirbnbPlus>
+    </div>
+    <div class="container w-[1366px] m-auto">
+        <CardItem></CardItem>
+    </div>
+    <div class="container w-[1366px] m-auto">
+        <Accommodations></Accommodations>
+    </div>
+    <div class="container w-[1366px] m-auto">
+        <CardItem></CardItem>
+    </div>
+    <div class="container w-[1366px] m-auto">
+        <Destination></Destination>
+    </div>
 </template>
 
 <script setup>
@@ -11,3 +29,9 @@ definePageMeta({
     path: '/'
 })
 </script>
+
+<style>
+.body {
+    overflow-x: hidden;
+}
+</style>

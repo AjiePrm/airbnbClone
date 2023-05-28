@@ -5,16 +5,27 @@
         <CardForm></CardForm>
     </div>
     <div class="container w-[1366px] m-auto">
-        <AirbnbPlus></AirbnbPlus>
+        <Category></Category>
     </div>
     <div class="container w-[1366px] m-auto">
-        <Category></Category>
+        <AirbnbPlus></AirbnbPlus>
     </div>
     <div class="container w-[1366px] m-auto">
         <CardItem></CardItem>
     </div>
+    <div class="container w-[1366px] m-auto">
+        <Accommodations></Accommodations>
+    </div>
+    <div class="container w-[1366px] m-auto">
+        <CardItem></CardItem>
+    </div>
+    <div class="container w-[1366px] m-auto">
+        <Destination></Destination>
+    </div>
 </template>
 
 <script setup>
+import Accommodations from '~/components/accommodations.vue';
+
 
 </script>
