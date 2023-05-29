@@ -28,6 +28,7 @@
 definePageMeta({
     path: '/'
 })
+
 </script>
 
 <style>
