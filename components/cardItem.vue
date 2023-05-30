@@ -14,7 +14,9 @@
 
                 <div class="font-fontRoboto py-[8px]">
                     <div class="font-bold text-xs leading-[1.2] uppercase text-secondaryGray">{{ product.category }}</div>
-                    <div class="font-fontRoboto font-bold text-base leading-[1.1875rem] pb-2 pt-1">{{ product.title }}
+                    <div class="h-[38px] font-fontRoboto font-bold text-base leading-[1.1875rem] pb-2 pt-1 overflow-hidden">
+                        {{ product.title
+                        }}
                     </div>
                     <div class="font-normal text-base leading-[1.5rem] text-secondaryGray pb-[5px]">$ {{ product.price }}
                     </div>
