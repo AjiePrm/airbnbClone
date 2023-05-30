@@ -50,7 +50,7 @@ export default {
     computed: {
         firstFiveProducts() {
             if (this.products && this.products.length > 0) {
-                return this.products.slice(0, 6);
+                return this.products.slice(7, 6);
             }
             return [];
         }

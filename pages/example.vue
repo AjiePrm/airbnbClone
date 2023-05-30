@@ -11,13 +11,17 @@
         <AirbnbPlus></AirbnbPlus>
     </div>
     <div class="container w-[1366px] m-auto">
-        <CardItem></CardItem>
+        <CardItem :products="products" :mainTitle="'Découvrez les aventures Airbnb'"
+            :underTitle="'Voyages de plusieurs jours organisés par des experts locaux avec activités, repas et logements compris'">
+        </CardItem>
     </div>
     <div class="container w-[1366px] m-auto">
         <Accommodations></Accommodations>
     </div>
     <div class="container w-[1366px] m-auto">
-        <CardItem></CardItem>
+        <CardItem :products="nextProducts" :mainTitle="'Expériences très bien notées'"
+            :underTitle="'Voyages de plusieurs jours organisés par des experts locaux avec activités, repas et logements compris'">
+        </CardItem>
     </div>
     <div class="container w-[1366px] m-auto">
         <Destination></Destination>
@@ -26,27 +30,39 @@
 
 <script>
 import Accommodations from '~/components/accommodations.vue';
+import CardItem from '~/components/cardItem.vue'
 export default {
-    async asyncData() {
-        const url = 'https://hotels4.p.rapidapi.com/v2/get-meta-data';
-        const options = {
-            method: 'GET',
-            headers: {
-                'X-RapidAPI-Key': 'b1f4afdd77msh166ac96d7ae34ebp129dffjsn2f4d005dc1aa',
-                'X-RapidAPI-Host': 'hotels4.p.rapidapi.com'
-            }
+    data() {
+        return {
+            imgLoading: null,
+            data: null,
+            index: 1,
+            products: [],
+            nextProduct: [],
         };
+    },
+    methods: {
+        async fetchData() {
+            const response = await fetch(`https://dummyjson.com/products`);
+            this.data = await response.json();
+            //console.log(this.data.products[0].title)
+            const products = this.data.products;
+            console.log(products)
+            return products;
+        },
 
-        try {
-            const response = await fetch(url, options);
-            const result = await response.json();
-            return { result };
-        } catch (error) {
-            console.error(error);
-            return { result: [] };
-        }
-    }
+    },
+    components: {
+        CardItem,
+    },
+    async mounted() {
+        this.products = await this.fetchData();
+        this.nextProducts = this.products.slice(6)
+        //if (data.products && data.products.length > 0) {
+        //this.productTitle = this.data.products[0].title;
+        // }
+        //console.log(productTitle)
+    },
 };
-
 
 </script>

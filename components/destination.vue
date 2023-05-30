@@ -7,7 +7,7 @@
                 jours
                 organisés par des experts locaux avec activités, repas et logements compris</h2>
         </div>
-        <div class="grid gap-4 overflow-x-auto xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1">
+        <div class="grid gap-4 xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1">
             <div class="card w-[391px] h-[294px]">
                 <div class="relative rounded-lg w-[391px] h-[239px]">
                     <img class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 w-[48.88px] h-[52.51px] "
