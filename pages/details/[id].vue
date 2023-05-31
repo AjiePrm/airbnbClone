@@ -13,10 +13,10 @@
                 <img class="w-[560px] h-[410px] bg-secondaryGray rounded-l-lg" :src="imageOne" alt="img"/>
             </div>
             <div class="grid gap-1 grid-cols-2 w-[650px] h-[422px]">
-                <img class="w-[272px] h-[196px] bg-secondaryGray" src="" alt="img"/>
-                <img class="w-[272px] h-[196px] bg-secondaryGray rounded-r-lg" src=""  alt="img"/>
-                <img class="w-[272px] h-[196px] bg-secondaryGray" src=""  alt="img"/>
-                <img class="w-[272px] h-[196px] bg-secondaryGray rounded-r-lg" src=""  alt="img"/>
+                <img class="w-[272px] h-[196px] bg-secondaryGray" :src="imageTwo" alt="img"/>
+                <img class="w-[272px] h-[196px] bg-secondaryGray rounded-r-lg" :src="imageTree"  alt="img"/>
+                <img class="w-[272px] h-[196px] bg-secondaryGray" :src="imageFour"  alt="img"/>
+                <img class="w-[272px] h-[196px] bg-secondaryGray rounded-r-lg" :src="imageFive"  alt="img"/>
             </div>
         </div>
         <div class="flex">
@@ -68,7 +68,7 @@
   data() {
     return {
       detailsProucts: [],
-      imageOne: {},
+      
     };
   },
   methods: {
@@ -84,7 +84,11 @@
   async mounted() {
     const { id } = useRoute().params;
     this.detailsProucts = await this.getPost(id);
-    this.imageOne = this.detailsProucts.images[0]();
+    this.imageOne = this.detailsProucts.images[0];
+    this.imageTwo = this.detailsProucts.images[1];
+    this.imageTree = this.detailsProucts.images[2];
+    this.imageFour = this.detailsProucts.images[3];
+    this.imageFive = this.detailsProucts.images[4];
   },
 };
 
