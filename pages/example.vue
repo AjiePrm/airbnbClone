@@ -1,29 +1,29 @@
 <template>
     <div
-        class="container lg:w-[1366px] m-auto relative flex justify-center bg-[url('~/assets/image/bghero.svg')] h-[750px] font-fontRoboto">
+        class="w-full lg:w-[1366px] md:m-auto relative flex justify-center bg-[url('~/assets/image/bghero.svg')] h-[750px] font-fontRoboto">
         <Header></Header>
-        <CardForm></CardForm>
+        <CardForm class="hidden md:block"></CardForm>
     </div>
-    <div class="container xl:w-[1366px] sm:w-full m-auto">
+    <div class="w-full lg:w-[1366px] md:m-auto">
         <Category></Category>
     </div>
-    <div class="container xl:w-[1366px] sm:w-full m-auto">
+    <div class="w-full lg:w-[1366px] md:m-auto">
         <AirbnbPlus></AirbnbPlus>
     </div>
-    <div class="container xl:w-[1366px] sm:w-full m-auto">
+    <div class="w-full lg:w-[1366px] md:m-auto">
         <CardItem :products="products" :mainTitle="'Découvrez les aventures Airbnb'"
             :underTitle="'Voyages de plusieurs jours organisés par des experts locaux avec activités, repas et logements compris'">
         </CardItem>
     </div>
-    <div class="container xl:w-[1366px] sm:w-full m-auto">
+    <div class="w-full lg:w-[1366px] md:m-auto">
         <Accommodations></Accommodations>
     </div>
-    <div class="container xl:w-[1366px] sm:w-full m-auto">
+    <div class="w-full lg:w-[1366px] md:m-auto">
         <CardItem :products="nextProducts" :mainTitle="'Expériences très bien notées'"
             :underTitle="'Voyages de plusieurs jours organisés par des experts locaux avec activités, repas et logements compris'">
         </CardItem>
     </div>
-    <div class="container xl:w-[1366px] sm:w-full m-auto">
+    <div class="w-full lg:w-[1366px] md:m-auto">
         <Destination></Destination>
     </div>
 </template>

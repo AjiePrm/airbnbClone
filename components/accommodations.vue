@@ -1,5 +1,5 @@
 <template>
-    <div class="container px-20 pt-[88px]">
+    <div class="container px-6 lg:px-20 pt-[88px]">
         <div class="pb-6">
             <h1 class="font-fontRoboto font-semibold text-[24px] text-secondaryDark pb-2">Logements dans le monde entier
             </h1>

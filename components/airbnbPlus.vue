@@ -1,14 +1,14 @@
 <template>
-    <div class="container px-20 pt-[88px] pb-6">
+    <div class="w-full px-6 lg:px-20 pt-[88px] pb-6">
         <h1 class="font-fontRoboto font-semibold text-[24px] text-secondaryDark pb-2">Hébergements Airbnb Plus</h1>
         <h2 class="font-fontRoboto font-light text-base leading-5 text-secondaryGray">Une sélection de logements vérifiés
             selon
             des critères de
             qualité et de design</h2>
     </div>
-    <div class="container m-auto flex items-center justify-center px-20">
+    <div class="w-full md:m-auto flex items-center justify-center lg:px-20 px-6">
         <div
-            class="card w-[1206px] h-[310px] px-[80px] flex flex-col items-center justify-center bg-[url('~/assets/image/bnbPlus.png')] bg-cover rounded">
+            class="card lg:w-[1206px] w-full h-[290px] md:h-[310px] px-[80px] flex flex-col items-center justify-center bg-[url('~/assets/image/bnbPlus.png')] bg-cover rounded">
             <div class="pt-[65.87px]">
                 <img class="w-[104.5px] h-[112.27px]" src="~/assets/image/icon.svg" alt="logo">
             </div>
