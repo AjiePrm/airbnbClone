@@ -25,6 +25,7 @@ module.exports = {
         fontRoboto: ["Roboto", "sans-serif"],
        },
     },
+  
   },
   plugins: [],
 };

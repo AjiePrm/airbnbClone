@@ -1,13 +1,14 @@
 <template>
     <div class="w-full flex place-content-between gap-4 mt-[15.61px]">
         <div class="flex">
-            <div class="w-[28.65] h-[30.78] px-[25.65px]">
+            <div class="px-[25.65px]">
                 <img class="w-[28.65px] h-[30.78px]" src="~/assets/image/icon.svg" alt="">
             </div>
         </div>
-        <div class="flex justify-end pr-[24px]">
+        <div class="hidden md:flex justify-end pr-[24px] lg:block
+        ">
             <ul
-                class="list flex space-x-[24px] text-secondaryWhite font-fontRoboto font-medium text-base leading-[1rem] mt-[7px]">
+                class="hidden list md:flex space-x-[24px] text-secondaryWhite font-fontRoboto font-medium text-xs lg:text-base leading-[1rem] mt-[7px]">
                 <li>Français (FR)</li>
                 <li>EUR €</li>
                 <li>Devenir hôte</li>

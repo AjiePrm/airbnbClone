@@ -56,10 +56,5 @@
     font-size: 16px;
 }
 
-input[type="date"]::-webkit-calendar-picker-indicator {
-    opacity: 0;
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-}
+
 </style>

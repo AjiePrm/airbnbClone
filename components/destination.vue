@@ -1,9 +1,9 @@
 <template>
-    <div class="container px-20 pt-[88px] pb-80">
+    <div class="container xl:px-20 lg:px-20 md:px-10 sm:px-10 pt-[88px] pb-80">
         <div class="pb-6">
             <h1 class="font-fontRoboto font-semibold text-[24px] text-secondaryDark pb-2">Destinations Airbnb Plus à la Une
             </h1>
-            <h2 class="w-[581px] font-fontRoboto font-light text-base leading-5 text-secondaryGray">Voyages de plusieurs
+            <h2 class="lg:w-[581px] sm:w-[300px] font-fontRoboto font-light text-base leading-5 text-secondaryGray">Voyages de plusieurs
                 jours
                 organisés par des experts locaux avec activités, repas et logements compris</h2>
         </div>

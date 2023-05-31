@@ -3,13 +3,13 @@
         <div class="pb-6">
             <h1 class="font-fontRoboto font-semibold text-[24px] text-secondaryDark pb-2">{{ mainTitle }}
             </h1>
-            <h2 class="w-[581px] font-fontRoboto font-light text-base leading-5 text-secondaryGray">{{ underTitle }}</h2>
+            <h2 class="lg:w-[581px] sm:w-[300px] font-fontRoboto font-light text-base leading-5 text-secondaryGray">{{ underTitle }}</h2>
         </div>
-        <div class="grid grid-cols-6 space-x-4 ">
-            <div v-for="product in firstFiveProducts" :key="index" class="card w-[188px] h-[371px]">
-                <div class="rounded-lg w-[188px] h-[240px] ">
+        <div class="grid xl:grid-cols-6 gap-4 md:grid-cols-3 sm:grid-cols-2  ">
+            <div v-for="product in firstFiveProducts" :key="index" class="card xl:w-[188px] xl:h-[371px] md:w-[178px] md:h-[361px] sm:w-[168px] sm:h-[351px]">
+                <div class="rounded-lg :w-[188pxlx] xl:h-[240px] md:w-[178px] md:h-[230px] sm:w-[168px] sm:h-[220px]">
                     <img :src="product.thumbnail"
-                        class="object-fill inline-block rounded-lg w-[188px] h-[240px] img-in-image-div">
+                        class="object-fill inline-block rounded-lg w-[188pxlx] xl:h-[240px] md:w-[178px] md:h-[230px] sm:w-[168px] sm:h-[220px] img-in-image-div">
                 </div>
 
                 <div class="font-fontRoboto py-[8px]">
