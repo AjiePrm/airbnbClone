@@ -3,10 +3,10 @@
         <h1 class="pb-6 font-fontRoboto font-semibold text-[24px] text-secondaryDark">Explorer Airbnb</h1>
         <div class="flex">
             <div
-                class=" grid grid-cols-1 w-[200px] h-[200px] lg:pl-8 place-content-center md:w-[840px] lg:w-full overflow-y-auto lg:h-[300px] lg:overflow-y-hidden lg:grid-cols-5 md:grid-cols-3 gap-2 border-[1px] py-3 rounded-xl">
+                class=" grid grid-cols-1 w-[200px] h-[200px] lg:pl-8 lg:place-content-center md:w-[840px] lg:w-full overflow-y-auto lg:h-[300px] lg:overflow-y-hidden lg:grid-cols-5 xl:grid-cols-6 md:grid-cols-3 gap-2 py-3 rounded-xl">
                 <div v-for="product in category"
                     class="card flex w-[155px] h-[30px] md:h-[45px] rounded-xl items-center shadow-2xl border-[1px] filter drop-shadow-sm">
-                    <div class="pl-4 content-center">
+                    <div class="pl-4 md:content-center">
                         <h2 class="font-fontRoboto font-semibold text-sm leading-5">{{ product }}</h2>
                     </div>
                 </div>
