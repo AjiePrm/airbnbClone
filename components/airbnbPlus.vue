@@ -14,7 +14,7 @@
             </div>
             <div class="pt-[37.87px] pb-[50px]">
                 <button
-                    class="py-4 pl-6 pr-4 bg-secondaryWhite rounded font-fontRoboto font-bold text-xs leading-[1.2] uppercase flex items-center">
+                    class="py-4 pl-6 pr-4 bg-secondaryWhite rounded font-fontRoboto font-bold text-[8px] md:text-xs leading-[1.2] uppercase flex items-center">
                     Découvrir des logements
                     <img class="ml-5 w-2 h-3" src="~/assets/image/arrowR.svg" alt=">">
                 </button>

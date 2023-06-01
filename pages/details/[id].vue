@@ -10,13 +10,13 @@
         </div>
         <div class="flex space-x-2 w-[1120px] h-[416px] pb-12">
             <div class="w-[560px] h-[410px] bg-secondaryGray rounded-l-lg">
-                <img class="w-[560px] h-[410px] bg-secondaryGray rounded-l-lg" :src="imageOne" alt="img"/>
+                <img class="w-[560px] h-[410px] bg-secondaryGray rounded-l-lg" :src="imageOne" alt=""/>
             </div>
             <div class="grid gap-1 grid-cols-2 w-[650px] h-[422px]">
-                <img class="w-[272px] h-[196px] bg-secondaryGray" :src="imageTwo" alt="img"/>
-                <img class="w-[272px] h-[196px] bg-secondaryGray rounded-r-lg" :src="imageTree"  alt="img"/>
-                <img class="w-[272px] h-[196px] bg-secondaryGray" :src="imageFour"  alt="img"/>
-                <img class="w-[272px] h-[196px] bg-secondaryGray rounded-r-lg" :src="imageFive"  alt="img"/>
+                <img class="w-[272px] h-[196px] bg-secondaryGray" :src="imageTwo" alt=""/>
+                <img class="w-[272px] h-[196px] bg-secondaryGray rounded-r-lg" :src="imageTree"  alt=""/>
+                <img class="w-[272px] h-[196px] bg-secondaryGray" :src="imageFour"  alt=""/>
+                <img class="w-[272px] h-[196px] bg-secondaryGray rounded-r-lg" :src="imageFive"  alt=""/>
             </div>
         </div>
         <div class="flex">
@@ -39,7 +39,7 @@
             <div class="ml-[93px] w-[372px] h-[276px] shadow-2xl rounded-lg">
                 <div class="h-[56px] px-[25px] py-[26px]">
 
-                    <h1 class="text-2xl font-semibold">${{detailsProucts.price}} <span class="text-lg font-normal">/ malam</span></h1>
+                    <h1 class="text-2xl font-semibold">${{detailsProucts.price}} <span class="text-lg font-normal line-through">${{detailsProucts.price}}</span></h1>
                     <div class="w-full flex mt-6">
                         <div class=" w-[161px] border-spacing-1 border">
                             <h2>Check-in</h2>

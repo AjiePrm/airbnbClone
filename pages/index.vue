@@ -1,7 +1,7 @@
 <template>
     <div
         class="w-full lg:w-[1366px] md:m-auto relative flex justify-center bg-[url('~/assets/image/bghero.svg')] h-[750px] font-fontRoboto">
-        <Header></Header>
+        <Header class="fixed w-full lg:w-[1366px] md:m-auto pt-[15.61px]"></Header>
         <CardForm class="hidden md:block"></CardForm>
     </div>
     <div class="w-full lg:w-[1366px] md:m-auto">
