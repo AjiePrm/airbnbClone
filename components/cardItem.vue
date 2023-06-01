@@ -7,7 +7,8 @@
                 underTitle }}</h2>
         </div>
         <div class="grid xl:grid-cols-6 gap-4 md:grid-cols-2 grid-cols-1  ">
-            <div v-for="product in firstFiveProducts" :key="product.id" class="card w-[188px] h-[371px]">
+            <!--v-for="product in firstFiveProducts"-->
+            <div v-for="product in products" :key="product.id" class="card w-[188px] h-[371px]">
                 <nuxt-link :to="`/details/${product.id}`">
                     <div class="rounded-lg w-[278px] h-[242px]  md:w-[188px] md:h-[240px] object-cover">
                         <img :src="product.thumbnail"
@@ -56,12 +57,12 @@ export default {
         underTitle: String,
     },
     computed: {
-        firstFiveProducts() {
-            if (this.products && this.products.length > 0) {
-                return this.products.slice(0, 6);
-            }
-            return [];
-        }
+        //firstFiveProducts() {
+        //    if (this.products && this.products.length > 0) {
+        //        return this.products.slice(0, 6);
+        //    }
+        //    return [];
+        //}
     }
 };
 
