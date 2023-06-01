@@ -10,9 +10,8 @@
             <!--v-for="product in firstFiveProducts"-->
             <div v-for="product in products" :key="product.id" class="card w-[188px] h-[371px]">
                 <nuxt-link :to="`/details/${product.id}`">
-                    <div class="rounded-lg w-[278px] h-[242px]  md:w-[188px] md:h-[240px] object-cover">
-                        <img :src="product.thumbnail"
-                            class="object-cover inline-block rounded-lg w-[188pxlx] h-[240px] img-in-image-div">
+                    <div class="rounded-lg w-[278px] h-[242px]  md:w-[188px] md:h-[240px]">
+                        <img :src="product.thumbnail" class="object-cover inline-block rounded-lg w-[188pxlx] h-[240px]">
                     </div>
 
                     <div class="font-fontRoboto py-[8px]">

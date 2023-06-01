@@ -43,7 +43,7 @@ export default {
             data: null,
             index: 1,
             products: {},
-            nextProduct: [],
+            //nextProduct: [],
         };
     },
     methods: {
@@ -62,7 +62,7 @@ export default {
     },
     async mounted() {
         this.products = await this.fetchData();
-        this.nextProducts = this.products.slice(6)
+        //this.nextProducts = this.products.slice(6)
         //if (data.products && data.products.length > 0) {
         //this.productTitle = this.data.products[0].title;
         // }
