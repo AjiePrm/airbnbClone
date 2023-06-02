@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="flex space-x-1 text-2xl border-b-2 pb-[26px]">
-                    <h2 class="text-2xl"> Stock: {{ detailsProucts.stock }} · </h2>
+                    <h2 class="text-2xl"> Stock: {{ stock }} · </h2>
                     <h2 class="text-2xl"> {{ detailsProucts.brand }} · </h2>
                     <h2 class="text-2xl"> rating: {{ detailsProucts.rating }} </h2>
                 </div>
@@ -36,16 +36,36 @@
                 </div>
             </div>
 
-            <div class="ml-[93px] w-[372px] h-[276px] shadow-2xl rounded-lg">
+            <div class="ml-[93px] w-[372px] h-[296px] shadow-2xl rounded-lg">
                 <div class="h-[56px] px-[25px] py-[26px]">
 
                     <h1 class="text-2xl font-semibold">${{ discountVal }} <span class="text-lg font-normal line-through">${{
                         detailsProucts.price }}</span> <span
                             class="text-sm font-normal bg-primaryRed text-secondaryWhite rounded-lg py-1 px-1">{{
-                                detailsProucts.discountPercentage }}%</span></h1>
+                                detailsProucts.discountPercentage }}%</span>
+                    </h1>
+                    <h1 class="text-2xl font-semibold px-2">${{ needToPayVal }} </h1>
+
 
                     <div class="pt-4">
-                        <button class="border-spacing-1 border h-[56px] w-[323px] rounded-lg">Chart ></button>
+                        <DropDownBtn></DropDownBtn>
+                    </div>
+                    <div class="py-4">
+                        <div class="container m-0 flex justify-center px-5">
+                            <button @click="handleCountMin" type="submit"
+                                class="btn btn-default inline-block bg-secondaryGray text-white py-1 rounded-xl px-6">
+                                -
+                            </button>
+                            <span>
+                                <h1 class="px-3 py-1 rounded-sm">
+                                    {{ count }}
+                                </h1>
+                            </span>
+                            <button @click="handleCountPlus" type="submit"
+                                class="btn btn-default inline-block bg-primaryRed text-white py-1 rounded-xl px-6">
+                                +
+                            </button>
+                        </div>
                     </div>
                     <div class="h-[56px] w-[323px] pt-4">
                         <button
@@ -61,8 +81,13 @@
 export default {
     data() {
         return {
+            count: 0,
             detailsProucts: [],
             discount: null,
+            priceItem: null,
+            discountVal: null,
+            needToPay: 0,
+            needToPayVal: 0,
             imageOne: null,
             imageTwo: null,
             imageTree: null,
@@ -87,20 +112,58 @@ export default {
             return discount = price - priceCut
         },
 
+        handleCountPlus() {
+            this.count++
+            this.needToPay = this.handlePriceCount(this.discount, this.count);
+            this.needToPayVal = this.needToPay.toFixed(2)
+            this.stock = this.handleStockCount(this.stockCount, this.count)
+        },
+
+        handleCountMin() {
+            if (this.count > 0) {
+                this.count--;
+                this.needToPay = this.handlePriceCount(this.discount, this.count);
+                this.needToPayVal = this.needToPay.toFixed(2)
+                this.stock = this.handleStockCount(this.stockCount, this.count)
+            }
+        },
+
+        handlePriceCount(priceItem, pcs) {
+            //let thePayedPrice = 0
+            return priceItem * pcs
+        },
+
+        handleStockCount(stocItem, pcs) {
+            return stocItem - pcs
+        },
+
     },
 
     async mounted() {
         const { id } = useRoute().params;
+        //funtion call 
         this.detailsProucts = await this.getPost(id);
+
+
+        //object calll variable
         this.imageOne = this.detailsProucts.images[0];
         this.imageTwo = this.detailsProucts.images[1];
         this.imageTree = this.detailsProucts.images[2];
         this.imageFour = this.detailsProucts.images[3];
         this.imageFive = this.detailsProucts.images[4];
+
+        //discount 
         const prices = this.detailsProucts.price
         const persetage = this.detailsProucts.discountPercentage
         this.discount = this.discountPrice(prices, persetage)
         this.discountVal = this.discount.toFixed(2)
+
+        //price handel
+        this.stockCount = this.detailsProucts.stock
+        this.stock = this.detailsProucts.stock;
+        // const pcs = this.count
+        // const priceItem = this.discount
+        // this.needToPay = this.handleStockCount(priceItem, pcs)
 
     },
 };

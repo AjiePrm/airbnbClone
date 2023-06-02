@@ -6,9 +6,13 @@
                 class=" grid grid-cols-1 w-[200px] h-[200px] lg:pl-8 lg:place-content-center md:w-[840px] lg:w-full overflow-y-auto lg:h-[300px] lg:overflow-y-hidden lg:grid-cols-5 xl:grid-cols-6 md:grid-cols-3 gap-2 py-3 rounded-xl">
                 <div v-for="product in category"
                     class="card flex w-[155px] h-[30px] md:h-[45px] rounded-xl items-center shadow-2xl border-[1px] filter drop-shadow-sm">
-                    <div class="pl-4 md:content-center">
-                        <h2 class="font-fontRoboto font-semibold text-sm leading-5">{{ product }}</h2>
-                    </div>
+                    <nuxt-link :to="`category/${product}`">
+                        <div class="pl-4 md:content-center h-[45px] pt-3 cursor-pointer">
+                            <h2 class="font-fontRoboto w-[155px] font-semibold text-sm leading-5 cursor-pointer">{{ product
+                            }}
+                            </h2>
+                        </div>
+                    </nuxt-link>
                 </div>
             </div>
             <div class="pl-4 h-[200px] lg:hidden flex flex-col">

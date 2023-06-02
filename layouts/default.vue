@@ -11,19 +11,30 @@
                                 src="~/assets/image/icon.svg" alt="">
                         </nuxt-link>
                     </div>
+                    <div class="pt-2">
+                        <div class="w-[200px]  md:w-[300px] lg:w-[400px] h-6 bg-gray-200 flex justify-center items-center">
+                            <div
+                                class="w-full h-[38px] bg-gray-100 rounded-r-full rounded-l-full border shadow-lg text-xl flex items-center justify-center py-1 space-x-2 hover:cursor-pointer px-8">
+                                <input type="text" placeholder="Search"
+                                    class="bg-gray-100 w-full md:w-3/4 h-3/4 focus:outline-none flex-1">
+
+                                <button type="submit" class="rounded-full flex justify-center items-center h-6 w-6">
+                                    <MagnifyingGlassIcon class="text-blue-500 h-6 w-6"></MagnifyingGlassIcon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="hidden md:flex justify-end pr-[24px] lg:block
         ">
                     <!--{ 'text-scroll': isScrolling }-->
                     <ul
-                        class="hidden list md:flex space-x-[24px] text-secondaryDark font-fontRoboto font-semibold text-xs lg:text-base leading-[1rem] mt-[7px]">
-                        <li>Français (FR)</li>
+                        class="hidden list md:flex space-x-[24px] text-secondaryDark font-fontRoboto font-semibold text-xs lg:text-base leading-[1rem] mt-[7px] cursor-pointer">
+                        <NuxtLink to="/">
+                            <li>Home</li>
+                        </NuxtLink>
                         <li>EUR €</li>
                         <li>Devenir hôte</li>
-                        <li>Créer son expérience</li>
-                        <li>Aide</li>
-                        <li>Inscription</li>
-                        <li>Connexion</li>
                     </ul>
                 </div>
             </div>
@@ -36,11 +47,15 @@
 </template>
 
 <script>
+import { MagnifyingGlassIcon } from '@heroicons/vue/24/solid'
 export default {
     data() {
         return {
             isScrolling: false
         };
+    },
+    components: {
+        MagnifyingGlassIcon
     },
     mounted() {
         window.addEventListener('scroll', this.handleScroll);
