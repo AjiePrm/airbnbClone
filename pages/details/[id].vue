@@ -1,7 +1,7 @@
 <template>
     <div class="container lg:w-[1366px] px-[34px] m-auto py-16">
         <div class="font-semibold text-3xl pb-[6px]">
-            Detail Product
+            Details Product
         </div>
         <div class="flex space-x-4 pb-6">
             <h2 class="text-xl pr-[500px] ">Category : {{ detailsProucts.category }}</h2>
@@ -44,7 +44,7 @@
                             class="text-sm font-normal bg-primaryRed text-secondaryWhite rounded-lg py-1 px-1">{{
                                 detailsProucts.discountPercentage }}%</span>
                     </h1>
-                    <h1 class="text-2xl font-semibold px-2">${{ needToPayVal }} </h1>
+                    <h1 class="text-2xl font-semibold px-2 py-2">total: ${{ needToPayVal }} </h1>
 
 
                     <div class="pt-4">
@@ -68,8 +68,11 @@
                         </div>
                     </div>
                     <div class="h-[56px] w-[323px] pt-4">
-                        <button
-                            class="h-12 w-[323px] bg-primaryRed rounded-lg text-secondaryWhite font-semibold text-xl">Pesan</button>
+                        <NuxtLink to="/summary/example">
+                            <button
+                                class="h-12 w-[323px] bg-primaryRed rounded-lg text-secondaryWhite font-semibold text-xl">Pesan
+                            </button>
+                        </NuxtLink>
                     </div>
                 </div>
             </div>
@@ -81,13 +84,13 @@
 export default {
     data() {
         return {
-            count: 0,
+            count: 1,
             detailsProucts: [],
             discount: null,
             priceItem: null,
             discountVal: null,
-            needToPay: 0,
-            needToPayVal: 0,
+            //needToPay: 0,
+            //needToPayVal: 0,
             imageOne: null,
             imageTwo: null,
             imageTree: null,
@@ -120,10 +123,10 @@ export default {
         },
 
         handleCountMin() {
-            if (this.count > 0) {
+            if (this.count > 1) {
                 this.count--;
                 this.needToPay = this.handlePriceCount(this.discount, this.count);
-                this.needToPayVal = this.needToPay.toFixed(2)
+                this.needToPayVal = (this.needToPay * 1).toFixed(2)
                 this.stock = this.handleStockCount(this.stockCount, this.count)
             }
         },
@@ -158,9 +161,15 @@ export default {
         this.discount = this.discountPrice(prices, persetage)
         this.discountVal = this.discount.toFixed(2)
 
+        const pcs = this.count;
+        const priceItem = this.discount;
+        this.needToPay = this.handlePriceCount(priceItem, pcs);
+        this.needToPayVal = (this.needToPay * 1).toFixed(2);
+
         //price handel
         this.stockCount = this.detailsProucts.stock
-        this.stock = this.detailsProucts.stock;
+        this.stock = this.detailsProucts.stock - 1;
+        //this.needToPayVal = this.detailProducts.price;
         // const pcs = this.count
         // const priceItem = this.discount
         // this.needToPay = this.handleStockCount(priceItem, pcs)

@@ -12,17 +12,29 @@
                         </nuxt-link>
                     </div>
                     <div class="pt-2">
-                        <div class="w-[200px]  md:w-[300px] lg:w-[400px] h-6 bg-gray-200 flex justify-center items-center">
+
+                        <div class="w-[200px] md:w-[300px] lg:w-[400px] h-6 bg-gray-200 flex justify-center items-center">
                             <div
                                 class="w-full h-[38px] bg-gray-100 rounded-r-full rounded-l-full border shadow-lg text-xl flex items-center justify-center py-1 space-x-2 hover:cursor-pointer px-8">
                                 <input type="text" placeholder="Search"
-                                    class="bg-gray-100 w-full md:w-3/4 h-3/4 focus:outline-none flex-1">
-
-                                <button type="submit" class="rounded-full flex justify-center items-center h-6 w-6">
-                                    <MagnifyingGlassIcon class="text-blue-500 h-6 w-6"></MagnifyingGlassIcon>
-                                </button>
+                                    class="bg-gray-100 w-full md:w-3/4 h-3/4 focus:outline-none flex-1"
+                                    v-model="searchValue" @input="performSearch">
+                                <NuxtLink :to="`/search/${searchValue}`">
+                                    <button type="submit" class="rounded-full flex justify-center items-center h-6 w-6"
+                                        @click="clearResultsDropdown">
+                                        <MagnifyingGlassIcon class="text-blue-500 h-6 w-6"></MagnifyingGlassIcon>
+                                    </button>
+                                </NuxtLink>
                             </div>
+                            <ul v-if="showDropdown && searchValue !== ''"
+                                class="absolute w-[400px] h-[400px] top-14 mt-1 bg-secondaryWhite rounded-md shadow-lg z-[0] overflow-y-auto">
+                                <li v-for="result in dropdownResults" :key="result" class="py-2 px-4 cursor-pointer"
+                                    @click="clearResultsDropdown">
+                                    <NuxtLink :to="`/details/${result.id}`"> {{ result.title }} </NuxtLink>
+                                </li>
+                            </ul>
                         </div>
+
                     </div>
                 </div>
                 <div class="hidden md:flex justify-end pr-[24px] lg:block
@@ -51,7 +63,9 @@ import { MagnifyingGlassIcon } from '@heroicons/vue/24/solid'
 export default {
     data() {
         return {
-            isScrolling: false
+            isScrolling: false,
+            searchValue: '',
+            showDropdown: false,
         };
     },
     components: {
@@ -72,6 +86,34 @@ export default {
             }
         },
 
+
+        async performSearch() {
+            if (this.searchValue) {
+                const searchResults = await this.getPost(this.searchValue);
+                //console.log(searchResults.products);
+                this.displayResultsDropdown(searchResults.products);
+            } else {
+                this.clearResultsDropdown();
+            }
+        },
+
+        async getPost(query) {
+            const response = await fetch(`https://dummyjson.com/products/search?q=${query}`);
+            const searchProducts = await response.json();
+            return searchProducts;
+        },
+        displayResultsDropdown(results) {
+            this.dropdownResults = results.map((product) => ({
+                title: product.title,
+                id: product.id,
+            }));
+            this.showDropdown = true;
+        },
+
+        clearResultsDropdown() {
+            this.dropdownResults = [];
+            this.showDropdown = false;
+        },
 
     }
 };

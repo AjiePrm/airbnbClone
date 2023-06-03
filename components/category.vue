@@ -45,7 +45,7 @@ export default {
             const response = await fetch(`https://dummyjson.com/products/categories`);
             this.data = await response.json();
             const category = this.data;
-            console.log(category[0])
+            //console.log(category[0])
             return category;
         },
 
