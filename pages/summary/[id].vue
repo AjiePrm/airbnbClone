@@ -10,14 +10,14 @@
             </div>
             <div class="basket-labels w-[1024px] m-auto">
                 <ul class="flex">
-                    <li class="item item-heading w-2/5">Item</li>
+                    <li class="item item-heading w-1/3">Item</li>
                     <li class="price w-1/5">Price</li>
                     <li class="quantity w-1/5">Quantity</li>
                     <li class="subtotal w-1/5">Subtotal</li>
                 </ul>
             </div>
-            <div class="basket-product w-[1024px] m-auto" v-for="(product, index) in products" :key="index">
-                <div class="item w-2/5">
+            <div class="basket-product w-[1024px] m-auto flex" v-for="(product, index) in products" :key="index">
+                <div class="item w-[43%]">
                     <div class="product-image">
                         <img src="~/assets/image/exploreOne.png" :alt="product.name" class="product-frame" />
                     </div>
@@ -36,7 +36,7 @@
                     <input type="number" v-model="product.quantity" min="1"
                         class="quantity-field border border-gray-300 rounded px-2 py-1" />
                 </div>
-                <div class="subtotal w-1/5">{{ (product.price * product.quantity).toFixed(2) }}</div>
+                <div class="subtotal pl-[50px] w-1/5">{{ (product.price * product.quantity).toFixed(2) }}</div>
                 <div class="remove w-1/5">
                     <button class="text-red-500 underline" @click="removeProduct(index)">Remove</button>
                 </div>
