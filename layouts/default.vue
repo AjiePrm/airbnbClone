@@ -1,5 +1,5 @@
 <template>
-    <header class="w-full lg:w-[1366px] md:m-auto relative flex justify-center font-fontRoboto z-40">
+    <header class="w-full h-[50px] lg:w-[1366px] md:m-auto relative flex justify-center font-fontRoboto z-40">
         <div class="fixed w-full lg:w-[1366px] md:m-auto">
             <!--:class="{ 'navbar-scroll': isScrolling }-->
             <div class="w-full flex place-content-between gap-4 pt-[15.61px] navbar-scroll">
