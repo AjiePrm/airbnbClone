@@ -45,8 +45,12 @@
                         <NuxtLink to="/">
                             <li>Home</li>
                         </NuxtLink>
-                        <li>EUR €</li>
-                        <li>Devenir hôte</li>
+                        <NuxtLink to="/summary/example">
+                            <li>Chart</li>
+                        </NuxtLink>
+                        <NuxtLink to="/">
+                            <li>Login</li>
+                        </NuxtLink>
                     </ul>
                 </div>
             </div>

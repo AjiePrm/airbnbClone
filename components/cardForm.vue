@@ -7,26 +7,71 @@
         <div class="px-[24px] pb-[16px]">
             <h2 class="pb-[8px] font-fontRoboto font-bold text-xs leading-[1.1667rem] uppercase text-secondaryDark">Username
             </h2>
-            <input type="text" placeholder="type here ..." class="w-[343px] h-[42px] rounded-sm"
+            <input v-model="username" type="text" placeholder="type here ..." class="w-[343px] h-[42px] rounded-sm"
                 style="border: 1px solid #E3E3E3;">
         </div>
 
-
         <div class="px-[24px]">
-            <h2 class="pb-[8px] font-fontRoboto font-bold text-xs leading-[1.1667rem] uppercase text-secondaryDark">
-                Password</h2>
-            <input type="password" placeholder="type here ..." class="w-[343px] h-[42px] rounded-sm"
+            <h2 class="pb-[8px] font-fontRoboto font-bold text-xs leading-[1.1667rem] uppercase text-secondaryDark">Password
+            </h2>
+            <input v-model="password" type="password" placeholder="type here ..." class="w-[343px] h-[42px] rounded-sm"
                 style="border: 1px solid #E3E3E3;">
         </div>
 
         <div class="px-[24px] pt-[24px] flex justify-end">
-            <button class="bg-primaryRed px-[32px] py-[13px] rounded-[4px] text-secondaryWhite text-[16px] font-semibold">
+            <button @click="handleLogin"
+                class="bg-primaryRed px-[32px] py-[13px] rounded-[4px] text-secondaryWhite text-[16px] font-semibold">
                 Login
             </button>
         </div>
     </div>
 </template>
+  
+<script>
+export default {
+    data() {
+        return {
+            username: '',
+            password: '',
+        };
+    },
+    methods: {
+        async handleLogin() {
+            if (!this.username || !this.password) {
+                return;
+            }
 
+            try {
+                const response = await fetch('https://dummyjson.com/auth/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        username: this.username,
+                        password: this.password,
+                    }),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    const token = data.token;
+                    navigateTo({
+                        path: '/'
+                    })
+
+                } else {
+
+                }
+            } catch (error) {
+
+            }
+        },
+    },
+};
+</script>
+  
 <style>
 ::placeholder {
     padding-left: 40px;
@@ -38,3 +83,4 @@
     font-size: 16px;
 }
 </style>
+  
