@@ -146,13 +146,30 @@ export default {
         handleStockCount(stocItem, pcs) {
             return stocItem - pcs
         },
-        handlePesanClick(pcs) {
-            this.$router.push({
-                path: `/summary/example`,
-                props: {
-                    count: pcs,
-                },
-            });
+        handlePesanClick() {
+            const selectedProduct = {
+            name: this.detailsProucts.title || '',
+            category: this.detailsProucts.category || '',
+            image: this.detailsProucts.thumbnail || '',
+            price: this.discountVal || '',
+            quantity: this.count,
+        };
+
+        const savedProducts = localStorage.getItem('selectedProducts');
+        let productsArray = [];
+        if (savedProducts) {
+            // Parse the existing data into an array
+            productsArray = JSON.parse(savedProducts);
+        }
+        productsArray.push(selectedProduct);
+
+        // Save the queryData to localStorage
+        localStorage.setItem('selectedProducts', JSON.stringify(productsArray));
+
+        navigateTo({
+            path: '/summary/example',
+            query: selectedProduct
+        });
         },
 
     },
