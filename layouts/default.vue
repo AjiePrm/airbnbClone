@@ -22,7 +22,7 @@
                                 <NuxtLink :to="`/search/${searchValue}`">
                                     <button type="submit" class="rounded-full flex justify-center items-center h-6 w-6"
                                         @click="clearResultsDropdown">
-                                        <MagnifyingGlassIcon class="text-blue-500 h-6 w-6"></MagnifyingGlassIcon>
+                                        <MagnifyingGlassIcon class="text-secondaryDark h-6 w-6"></MagnifyingGlassIcon>
                                     </button>
                                 </NuxtLink>
                             </div>
@@ -37,9 +37,9 @@
 
                     </div>
                 </div>
-                <div class="hidden md:flex justify-end pr-[24px] lg:block
+                <div class="hidden lg:flex justify-end pr-[24px]
         ">
-                    <!--{ 'text-scroll': isScrolling }-->
+                    <!--{ lg nav bar }-->
                     <ul
                         class="hidden list md:flex space-x-[24px] text-secondaryDark font-fontRoboto font-semibold text-xs lg:text-base leading-[1rem] mt-[7px] cursor-pointer">
                         <NuxtLink to="/">
@@ -52,6 +52,30 @@
                             <li>Login</li>
                         </NuxtLink>
                     </ul>
+                </div>
+                <!--{ sm-md nav bar }-->
+                <div class="lg:hidden block mr-[24px]  h-6 w-6">
+                    <button @click="handleMenu" class="block lg:hidden text-secondaryDark h-6 w-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                    </button>
+                    <div v-if="isMenu !== false" class="relative h-30 w-80">
+                        <ul
+                            class="absolute rounded-lg tracking-widest h-30 w-40 bg-secondaryWhite right-72 text-center text-secondaryDark font-fontRoboto font-semibold text-sm lg:text-base leading-[1rem] mt-[7px] cursor-pointer">
+                            <NuxtLink to="/">
+                                <li class="h-10 w-40">Home</li>
+                            </NuxtLink>
+                            <NuxtLink to="/summary/example">
+                                <li class="h-10 w-40">Chart</li>
+                            </NuxtLink>
+                            <NuxtLink to="/login">
+                                <li class="h-10 w-40">Login</li>
+                            </NuxtLink>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -70,10 +94,13 @@ export default {
             isScrolling: false,
             searchValue: '',
             showDropdown: false,
+            isMenu: false,
         };
     },
     components: {
-        MagnifyingGlassIcon
+        MagnifyingGlassIcon,
+        //Bars4Icon,
+
     },
     mounted() {
         window.addEventListener('scroll', this.handleScroll);
@@ -82,6 +109,11 @@ export default {
         window.removeEventListener('scroll', this.handleScroll);
     },
     methods: {
+        handleMenu() {
+            this.isMenu = !this.isMenu
+            //console.log(this.isMenu)
+        },
+
         handleScroll() {
             if (window.scrollY > 0) {
                 this.isScrolling = true;

@@ -94,7 +94,8 @@
         </button>
       </div>
       <div class="summary-checkout py-2 lg:m-auto lg:w-2/6">
-        <button class="checkout-cta bg-primaryRed text-secondaryWhite rounded-lg w-full py-2" @click="handleCheckout">
+        <NuxtLink to="/login"></NuxtLink>
+        <button class="checkout-cta bg-primaryRed text-secondaryWhite rounded-lg w-full py-2">
           log in
         </button>
       </div>

@@ -6,10 +6,6 @@
         -->
         <CardForm class="hidden md:block"></CardForm>
     </div>
-
-    <div class="w-full lg:w-[1366px] md:m-auto">
-        <Category></Category>
-    </div>
     <div class="w-full lg:w-[1366px] md:m-auto">
         <AirbnbPlus></AirbnbPlus>
     </div>
