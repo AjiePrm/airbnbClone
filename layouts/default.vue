@@ -48,9 +48,10 @@
                         <NuxtLink to="/summary/example">
                             <li>Chart</li>
                         </NuxtLink>
-                        <NuxtLink to="/">
+                        <NuxtLink to="/login">
                             <li>Login</li>
                         </NuxtLink>
+
                     </ul>
                 </div>
                 <!--{ sm-md nav bar }-->
@@ -71,7 +72,7 @@
                             <NuxtLink to="/summary/example">
                                 <li class="h-10 w-40">Chart</li>
                             </NuxtLink>
-                            <NuxtLink to="/login">
+                            <NuxtLink to="/KOIKBNTPH NIKO;GTTV IKML,.">
                                 <li class="h-10 w-40">Login</li>
                             </NuxtLink>
                         </ul>

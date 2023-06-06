@@ -4,9 +4,9 @@
         <h2 class="font-fontRoboto font-light text-base leading-5 text-secondaryGray">A selection of category checked
             according to quality and design criteria</h2>
     </div>
-    <div class="w-full md:m-auto flex items-center justify-center lg:px-20 px-6">
+    <div class="w-full md:m-auto flex items-center justify-center xl:px-20 px-6">
         <div
-            class="relative lg:w-[1206px] w-full h-[290px] md:h-[310px] px-[80px] bg-[url('~/assets/image/bnbPlus.png')] bg-cover rounded">
+            class="relative lg:w-[1206px] w-full h-[290px] md:h-[310px] xl:px-[80px] bg-[url('~/assets/image/bnbPlus.png')] bg-cover rounded">
             <div class="pt-[65.87px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                 <img class="w-[104.5px] h-[112.27px]" src="~/assets/image/icon.svg" alt="logo">
             </div>
